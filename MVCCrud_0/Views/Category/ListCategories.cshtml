@@ -3,5 +3,23 @@
     ViewBag.Title = "ListCategories";
 }
 
-<h2>ListCategories</h2>
+<h2>Kategori eklemek icin @Html.ActionLink("tıklayınız","AddCategory")</h2>
+
+<div class="container">
+    <table class="table table-hover">
+        <tr>
+            <th>ID</th>
+            <th>Isim</th>
+            <th>Aciklama</th>
+        </tr>
+        @foreach (CategoryVM item in Model)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.CategoryName</td>
+                <td>@item.Description</td>
+            </tr>
+        }
+    </table>
+</div>
 

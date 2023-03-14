@@ -27,5 +27,10 @@ namespace MVCCrud_0.Controllers
             }).ToList();
             return View(categories);
         }
+
+        public ActionResult AddCategory()
+        {
+            return View();
+        }
     }
 }
