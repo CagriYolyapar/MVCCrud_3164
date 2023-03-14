@@ -254,6 +254,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Category\ListCategories.cshtml" />
     <Content Include="Views\Category\AddCategory.cshtml" />
+    <Content Include="Views\Category\UpdateCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

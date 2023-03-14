@@ -63,8 +63,18 @@ namespace MVCCrud_0.Controllers
 
         public ActionResult UpdateCategory(int id)
         {
-            CategoryVM cvm = _db.Categories.Select(x => x.CategoryID == id).FirstOrDefault();
-            return View();
+            //Bir ID'ya göre Category'nin secilmesi isteniyor
+            //Secilen Category'nin VM olarak elde edilmesi isteniyor
+            //Elde edilen şeyin tekil bir yapıda tutulması isteniyor
+
+            CategoryVM cvm = _db.Categories.Where(x => x.CategoryID == id).Select(x => new CategoryVM
+            {
+                ID = x.CategoryID,
+                CategoryName = x.CategoryName,
+                Description = x.Description
+            }).FirstOrDefault();
+
+            return View(cvm);
         }
     }
 }
