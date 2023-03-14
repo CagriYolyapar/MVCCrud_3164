@@ -74,7 +74,28 @@ namespace MVCCrud_0.Controllers
                 Description = x.Description
             }).FirstOrDefault();
 
+
+
             return View(cvm);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateCategory(CategoryVM cvm)
+        {
+            Category guncellenecekVeri = _db.Categories.Find(cvm.ID);
+            guncellenecekVeri.CategoryName = cvm.CategoryName;
+            guncellenecekVeri.Description = cvm.Description;
+            _db.SaveChanges();
+
+            return RedirectToAction("ListCategories");
+
+        }
+
+        public ActionResult DeleteCategory(int id)
+        {
+            _db.Categories.Remove(_db.Categories.Find(id));
+            _db.SaveChanges();
+            return RedirectToAction("ListCategories");
         }
     }
 }

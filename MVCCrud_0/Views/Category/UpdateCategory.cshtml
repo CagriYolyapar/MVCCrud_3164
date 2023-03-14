@@ -1,7 +1,30 @@
-﻿
+﻿@model CategoryVM
+
+
+
 @{
     ViewBag.Title = "UpdateCategory";
 }
 
-<h2>UpdateCategory</h2>
+
+@using (Html.BeginForm())
+{
+  
+
+
+    <div>
+        @Html.TextBoxFor(x=>x.CategoryName)
+    </div>
+
+    <div>
+        @Html.TextBoxFor(x=>x.Description)
+    </div>
+
+    <div>
+        <button class="btn btn-primary">
+            Güncelle
+        </button>
+    </div>
+}
+
 

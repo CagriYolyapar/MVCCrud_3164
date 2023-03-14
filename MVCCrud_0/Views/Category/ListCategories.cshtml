@@ -27,7 +27,7 @@
 
                 </td>
                 <td>
-                    <a class="btn btn-danger">Sil</a>
+                    @Html.ActionLink("Sil", "DeleteCategory", new { id = item.ID }, new { @class="btn btn-danger"})
                 </td>
             </tr>
         }
